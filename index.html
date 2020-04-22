@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribbean portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <style>
+        /*Checked (jQuery element) attribute specifies that an <input> element
+         should be pre-selected (checked) when the page loads.*/
+    .carousel-open:checked + .carousel-item {
+				position: static;
+				opacity: 100;
+			}
+	.carousel-item {
+				-webkit-transition: opacity 0.6s ease-out;
+				transition: opacity 0.6s ease-out;
+            }
+            /*("element ~ siblings")*/
+	#carousel-1:checked ~ .control-1,
+	#carousel-2:checked ~ .control-2,
+	#carousel-3:checked ~ .control-3 {
+				display: block;
+			}
+	.carousel-indicators {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 2%;
+				left: 0;
+				right: 0;
+				text-align: center;
+				z-index: 10;
+			}
+	#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+	#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+	#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
+				color:yellow;  /*Set to match the Tailwind colour you want the active one to be */
+            }
+		</style>
+    </style>
+</head>
+<body class=".box-border m-0 p-0 antialiased font-serif">
+    <!--Top banner-->
+    <header class="   bg-white  h-20 flex items-center pt-3 text-black px-12 justify-between font-medium" >
+        <!--Left Side-->
+        <div class="flex items-center">
+        <img class="cursor-pointer w-32 mr-6" src="" alt="logo">
+        <form class="flex"action="" method="POST">
+            <input class="border border-gray-700 py-2 px-40 m-0 outline-none text-black" type="text" placeholder="Search all items...">
+            <button class="border-2 w-16 px-4 border-blue-300 bg-blue-400"><img src="img/search.svg"></button>
+        </form> 
+        </div>
+        <!--right side-->
+    
+            <ul class="flex border-none h-12 items-center">
+                <li class="mr-8 hover:bg-blue-400"><button class="w-40 h-10">Create Account</button></li>
+                <li class="mr-8 hover:bg-blue-400"><button class="w-20 h-10">Log in</button></li>
+                <li class="mr-8"><img src="img/shopping-bag.svg" alt=""></li>
+            </ul>
+    </header>
+    <!--bottom banner-->
+    <div class="py-1" style="background: linear-gradient(90deg, #ffffff 0%, #ffffff 100%)">
+  <div class="container mx-auto px-6">
+    <ul class="flex justify-between text-sm ">
+      <li>
+        <li><a href="#">Grenada</a></li>
+        <li><a href="#">St.Lucia</a></li>
+        <li><a href="#">St.Kitts and Nevis</a></li>
+        <li><a href="#">Anguilla</a></li>
+        <li><a href="#">British Virgin Islands</a></li>
+        <li><a href="#">Guadeloupe</a></li>
+        <li><a href="#">Martinique</a></li>
+        <li><a href="#">Anguilla</a></li>
+        <li><a href="#">Dominica</a></li>
+        <li><a href="#">St.Vincent and the Grenadines</a></li>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--picture section using icons from coolsymbol.com-->
+<div class="relative shadow-2xl bg-white">
+	<div class="relative overflow-hidden w-full">
+	  <!--Slide 1-->
+        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" 
+        aria-hidden="true" hidden="" checked="checked">
+		<div class="carousel-item absolute opacity-0" style="height:70vh;">
+			<div class="block h-full w-full">
+                <img style="height: 600px;" class=" object-cover w-full" src="img/img1.jpg"></div>
+		</div>
+		<label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+		
+        <!--Slide 2-->
+        <!--A hidden field let web developers include data that cannot be seen-->
+		<input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item absolute opacity-0" style="height:70vh;">
+			<div class="block h-full w-full">
+                <img style="height: 600px;" class=" object-cover w-full" src="img/img2.jpg"></div>
+		</div>
+		<label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+		<label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
+		
+		<!--Slide 3-->
+        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+		<div class="carousel-item absolute opacity-0" style="height:70vh;">
+            <div class="block h-full w-full">
+                <img style="height: 600px;" class=" object-cover w-full" src="img/img3.jpg">
+            </div>
+		</div>
+		<label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
+        <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-yellow-500 rounded-full bg-white hover:bg-black leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
+        
+
+		<!-- dots for each slide-->
+		<ol class="carousel-indicators">
+			<li class="inline-block mr-3">
+				<label for="carousel-1" class="carousel-bullet cursor-pointer block   text-6xl hover:text-yellow-500">•</label>
+			</li>
+			<li class="inline-block mr-3">
+				<label for="carousel-2" class="carousel-bullet cursor-pointer block text-6xl text-black hover:text-yellow-500">•</label>
+			</li>
+			<li class="inline-block mr-3">
+				<label for="carousel-3" class="carousel-bullet cursor-pointer block text-6xl text-black hover:text-yellow-500">•</label>
+			</li>
+		</ol>
+	</div>
+</div>
+</body>
